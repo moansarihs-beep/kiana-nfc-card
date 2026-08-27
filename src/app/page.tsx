@@ -31,11 +31,10 @@ export default function Home() {
             icon={<Phone size={18} strokeWidth={1.75} />}
           />
           <ContactCard
-            href="https://www.instagram.com/coach__kianaa"
+            href="instagram://user?username=coach__kianaa"
             label="Instagram"
             value="@coach__kianaa"
-            ariaLabel="Open Instagram profile @coach__kianaa"
-            external
+            ariaLabel="Open Instagram profile @coach__kianaa in the Instagram app"
             icon={<InstagramIcon size={18} />}
           />
           <ContactCard
