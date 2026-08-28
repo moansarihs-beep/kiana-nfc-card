@@ -1,4 +1,6 @@
 import { ImageResponse } from "next/og";
+import { readFile } from "node:fs/promises";
+import { join } from "node:path";
 
 export const size = {
   width: 64,
@@ -7,21 +9,10 @@ export const size = {
 
 export const contentType = "image/png";
 
-async function loadSerifFont() {
-  const url =
-    "https://cdn.jsdelivr.net/fontsource/fonts/cormorant-garamond@5.0.8/latin-600-normal.ttf";
-
-  try {
-    const res = await fetch(url);
-    if (!res.ok) throw new Error("font fetch failed");
-    return await res.arrayBuffer();
-  } catch {
-    return null;
-  }
-}
-
 export default async function Icon() {
-  const fontData = await loadSerifFont();
+  const fontData = await readFile(
+    join(process.cwd(), "src/app/fonts/CormorantGaramond-SemiBold.ttf"),
+  );
 
   return new ImageResponse(
     (
@@ -33,7 +24,7 @@ export default async function Icon() {
           alignItems: "center",
           justifyContent: "center",
           background: "#F5EEE7",
-          borderRadius: "50%",
+          borderRadius: 9999,
           border: "3px solid #C9A66B",
         }}
       >
@@ -43,10 +34,10 @@ export default async function Icon() {
             color: "#3F312B",
             fontSize: 28,
             fontWeight: 600,
-            letterSpacing: "0.06em",
-            fontFamily: fontData ? "Cormorant" : "Georgia, serif",
+            letterSpacing: "0.08em",
+            fontFamily: "Cormorant",
             lineHeight: 1,
-            marginTop: -1,
+            marginTop: -2,
           }}
         >
           KS
@@ -55,18 +46,14 @@ export default async function Icon() {
     ),
     {
       ...size,
-      ...(fontData
-        ? {
-            fonts: [
-              {
-                name: "Cormorant",
-                data: fontData,
-                style: "normal" as const,
-                weight: 600 as const,
-              },
-            ],
-          }
-        : {}),
+      fonts: [
+        {
+          name: "Cormorant",
+          data: fontData,
+          style: "normal",
+          weight: 600,
+        },
+      ],
     },
   );
 }
