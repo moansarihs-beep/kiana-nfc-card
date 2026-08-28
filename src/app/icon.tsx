@@ -1,19 +1,13 @@
 import { ImageResponse } from "next/og";
-import { readFile } from "node:fs/promises";
-import { join } from "node:path";
 
 export const size = {
-  width: 64,
-  height: 64,
+  width: 32,
+  height: 32,
 };
 
 export const contentType = "image/png";
 
-export default async function Icon() {
-  const fontData = await readFile(
-    join(process.cwd(), "src/app/fonts/CormorantGaramond-SemiBold.ttf"),
-  );
-
+export default function Icon() {
   return new ImageResponse(
     (
       <div
@@ -24,47 +18,27 @@ export default async function Icon() {
           alignItems: "center",
           justifyContent: "center",
           background: "#F5EEE7",
+          borderRadius: 8,
+          border: "1.5px solid #C9A66B",
         }}
       >
         <div
           style={{
-            width: 58,
-            height: 58,
             display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            background: "#F5EEE7",
-            borderRadius: 9999,
-            border: "3px solid #C9A66B",
+            color: "#3F312B",
+            fontSize: 16,
+            fontWeight: 600,
+            letterSpacing: "-0.04em",
+            fontFamily: "Georgia, 'Times New Roman', serif",
+            lineHeight: 1,
           }}
         >
-          <div
-            style={{
-              display: "flex",
-              color: "#3F312B",
-              fontSize: 26,
-              fontWeight: 600,
-              letterSpacing: "0.08em",
-              fontFamily: "Cormorant",
-              lineHeight: 1,
-              marginTop: -2,
-            }}
-          >
-            KS
-          </div>
+          KS
         </div>
       </div>
     ),
     {
       ...size,
-      fonts: [
-        {
-          name: "Cormorant",
-          data: fontData,
-          style: "normal",
-          weight: 600,
-        },
-      ],
     },
   );
 }
