@@ -24,23 +24,34 @@ export default async function AppleIcon() {
           alignItems: "center",
           justifyContent: "center",
           background: "#F5EEE7",
-          borderRadius: 9999,
-          border: "7px solid #C9A66B",
         }}
       >
         <div
           style={{
+            width: 168,
+            height: 168,
             display: "flex",
-            color: "#3F312B",
-            fontSize: 82,
-            fontWeight: 600,
-            letterSpacing: "0.08em",
-            fontFamily: "Cormorant",
-            lineHeight: 1,
-            marginTop: -4,
+            alignItems: "center",
+            justifyContent: "center",
+            background: "#F5EEE7",
+            borderRadius: 9999,
+            border: "6px solid #C9A66B",
           }}
         >
-          KS
+          <div
+            style={{
+              display: "flex",
+              color: "#3F312B",
+              fontSize: 78,
+              fontWeight: 600,
+              letterSpacing: "0.08em",
+              fontFamily: "Cormorant",
+              lineHeight: 1,
+              marginTop: -4,
+            }}
+          >
+            KS
+          </div>
         </div>
       </div>
     ),
