@@ -31,41 +31,26 @@ export default async function Icon() {
             width: 58,
             height: 58,
             display: "flex",
-            flexDirection: "column",
             alignItems: "center",
             justifyContent: "center",
             background: "#F5EEE7",
             borderRadius: 9999,
-            border: "2.5px solid #C9A66B",
-            gap: 0,
+            border: "3px solid #C9A66B",
           }}
         >
           <div
             style={{
               display: "flex",
               color: "#3F312B",
-              fontSize: 13,
+              fontSize: 26,
               fontWeight: 600,
-              letterSpacing: "0.02em",
+              letterSpacing: "0.08em",
               fontFamily: "Cormorant",
               lineHeight: 1,
+              marginTop: -2,
             }}
           >
-            Kiana
-          </div>
-          <div
-            style={{
-              display: "flex",
-              color: "#3F312B",
-              fontSize: 13,
-              fontWeight: 600,
-              letterSpacing: "0.02em",
-              fontFamily: "Cormorant",
-              lineHeight: 1,
-              marginTop: 1,
-            }}
-          >
-            Shams
+            KS
           </div>
         </div>
       </div>

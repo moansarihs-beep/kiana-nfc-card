@@ -31,40 +31,26 @@ export default async function AppleIcon() {
             width: 168,
             height: 168,
             display: "flex",
-            flexDirection: "column",
             alignItems: "center",
             justifyContent: "center",
             background: "#F5EEE7",
             borderRadius: 9999,
             border: "6px solid #C9A66B",
-            gap: 2,
           }}
         >
           <div
             style={{
               display: "flex",
               color: "#3F312B",
-              fontSize: 36,
+              fontSize: 78,
               fontWeight: 600,
-              letterSpacing: "0.03em",
+              letterSpacing: "0.08em",
               fontFamily: "Cormorant",
               lineHeight: 1,
+              marginTop: -4,
             }}
           >
-            Kiana
-          </div>
-          <div
-            style={{
-              display: "flex",
-              color: "#3F312B",
-              fontSize: 36,
-              fontWeight: 600,
-              letterSpacing: "0.03em",
-              fontFamily: "Cormorant",
-              lineHeight: 1,
-            }}
-          >
-            Shams
+            KS
           </div>
         </div>
       </div>
