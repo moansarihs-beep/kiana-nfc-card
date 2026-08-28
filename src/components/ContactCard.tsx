@@ -1,8 +1,12 @@
+"use client";
+
 import type { ReactNode } from "react";
 import { ChevronRight } from "lucide-react";
 
 type ContactCardProps = {
   href: string;
+  /** Deep link used on phones (e.g. instagram://) when the app should open first. */
+  mobileHref?: string;
   label: string;
   value: string;
   icon: ReactNode;
@@ -12,6 +16,7 @@ type ContactCardProps = {
 
 export function ContactCard({
   href,
+  mobileHref,
   label,
   value,
   icon,
@@ -23,6 +28,12 @@ export function ContactCard({
       href={href}
       className="contact-card anim-contact"
       aria-label={ariaLabel}
+      onClick={(event) => {
+        if (!mobileHref) return;
+        if (!/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) return;
+        event.preventDefault();
+        window.location.href = mobileHref;
+      }}
       {...(external
         ? { target: "_blank", rel: "noopener noreferrer" }
         : {})}
