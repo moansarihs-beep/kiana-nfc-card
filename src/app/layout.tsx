@@ -16,7 +16,7 @@ const cormorant = Cormorant_Garamond({
 });
 
 export const metadata: Metadata = {
-  title: "Kiana Shams | Digital Card",
+  title: "Kiana Shams",
   description: "Connect with Kiana Shams",
   applicationName: "Kiana Shams Digital Card",
   appleWebApp: {
