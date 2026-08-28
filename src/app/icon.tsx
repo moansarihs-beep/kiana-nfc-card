@@ -3,13 +3,13 @@ import { readFile } from "node:fs/promises";
 import { join } from "node:path";
 
 export const size = {
-  width: 180,
-  height: 180,
+  width: 64,
+  height: 64,
 };
 
 export const contentType = "image/png";
 
-export default async function AppleIcon() {
+export default async function Icon() {
   const fontData = await readFile(
     join(process.cwd(), "src/app/fonts/CormorantGaramond-SemiBold.ttf"),
   );
@@ -28,25 +28,25 @@ export default async function AppleIcon() {
       >
         <div
           style={{
-            width: 168,
-            height: 168,
+            width: 58,
+            height: 58,
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
             justifyContent: "center",
             background: "#F5EEE7",
             borderRadius: 9999,
-            border: "6px solid #C9A66B",
-            gap: 2,
+            border: "2.5px solid #C9A66B",
+            gap: 0,
           }}
         >
           <div
             style={{
               display: "flex",
               color: "#3F312B",
-              fontSize: 36,
+              fontSize: 13,
               fontWeight: 600,
-              letterSpacing: "0.03em",
+              letterSpacing: "0.02em",
               fontFamily: "Cormorant",
               lineHeight: 1,
             }}
@@ -57,11 +57,12 @@ export default async function AppleIcon() {
             style={{
               display: "flex",
               color: "#3F312B",
-              fontSize: 36,
+              fontSize: 13,
               fontWeight: 600,
-              letterSpacing: "0.03em",
+              letterSpacing: "0.02em",
               fontFamily: "Cormorant",
               lineHeight: 1,
+              marginTop: 1,
             }}
           >
             Shams
