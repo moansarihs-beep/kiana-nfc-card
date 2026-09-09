@@ -11,6 +11,7 @@ type ContactCardProps = {
   value: string;
   icon: ReactNode;
   external?: boolean;
+  glass?: boolean;
   ariaLabel: string;
 };
 
@@ -21,12 +22,13 @@ export function ContactCard({
   value,
   icon,
   external = false,
+  glass = false,
   ariaLabel,
 }: ContactCardProps) {
   return (
     <a
       href={href}
-      className="contact-card anim-contact"
+      className={`contact-card anim-contact${glass ? " contact-card-glass" : ""}`}
       aria-label={ariaLabel}
       onClick={(event) => {
         if (!mobileHref) return;

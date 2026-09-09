@@ -1,4 +1,4 @@
-import { Heart, Mail, Phone } from "lucide-react";
+import { Heart, Mail, Phone, UserPlus } from "lucide-react";
 import { ContactCard } from "@/components/ContactCard";
 import { InstagramIcon } from "@/components/InstagramIcon";
 import { Portrait } from "@/components/Portrait";
@@ -52,6 +52,14 @@ export default function Home() {
             value="shamskiana@gmail.com"
             ariaLabel="Email Kiana Shams at shamskiana@gmail.com"
             icon={<Mail size={18} strokeWidth={1.75} />}
+          />
+          <ContactCard
+            href="/kiana.vcf"
+            label="Save"
+            value="Add to Contacts"
+            ariaLabel="Add Kiana Shams to contacts"
+            icon={<UserPlus size={18} strokeWidth={1.75} />}
+            glass
           />
         </nav>
       </div>

@@ -1,4 +1,5 @@
 import { ImageResponse } from "next/og";
+import { cormorantFontFamily, loadCormorantFont } from "@/lib/loadCormorantFont";
 
 export const size = {
   width: 32,
@@ -7,7 +8,9 @@ export const size = {
 
 export const contentType = "image/png";
 
-export default function Icon() {
+export default async function Icon() {
+  const font = await loadCormorantFont();
+
   return new ImageResponse(
     (
       <div
@@ -26,11 +29,12 @@ export default function Icon() {
           style={{
             display: "flex",
             color: "#3F312B",
-            fontSize: 16,
+            fontSize: 17,
             fontWeight: 600,
-            letterSpacing: "-0.04em",
-            fontFamily: "Georgia, 'Times New Roman', serif",
+            letterSpacing: "-0.02em",
+            fontFamily: cormorantFontFamily,
             lineHeight: 1,
+            marginTop: 1,
           }}
         >
           KS
@@ -39,6 +43,7 @@ export default function Icon() {
     ),
     {
       ...size,
+      fonts: [font],
     },
   );
 }

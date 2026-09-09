@@ -271,6 +271,33 @@ img {
   outline-offset: 3px;
 }
 
+.contact-card-glass {
+  min-height: 62px;
+  padding-top: 0.55rem;
+  padding-bottom: 0.55rem;
+  background: linear-gradient(
+    160deg,
+    rgba(255, 255, 255, 0.42) 0%,
+    rgba(255, 255, 255, 0.16) 100%
+  );
+  border-color: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(18px) saturate(150%);
+  -webkit-backdrop-filter: blur(18px) saturate(150%);
+  box-shadow:
+    inset 1px 1px 0 rgba(255, 255, 255, 0.8),
+    0 10px 24px rgba(74, 54, 43, 0.06);
+}
+
+.contact-card-glass .contact-icon,
+.contact-card-glass .contact-arrow {
+  width: 36px;
+  height: 36px;
+  background: rgba(255, 255, 255, 0.28);
+  box-shadow:
+    inset 1px 1px 0 rgba(255, 255, 255, 0.7),
+    0 1px 0 rgba(255, 255, 255, 0.35);
+}
+
 .contact-icon,
 .contact-arrow {
   width: 44px;
@@ -368,6 +395,10 @@ img {
 
 .anim-contact:nth-child(4) {
   animation-delay: 400ms;
+}
+
+.anim-contact:nth-child(5) {
+  animation-delay: 480ms;
 }
 
 @media (prefers-reduced-motion: reduce) {
