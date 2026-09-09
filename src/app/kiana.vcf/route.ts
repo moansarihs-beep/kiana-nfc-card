@@ -1,5 +1,4 @@
-import { readFile } from "fs/promises";
-import path from "path";
+import { buildContactPhoto } from "@/lib/buildContactPhoto";
 
 function escapeVCard(value: string) {
   return value
@@ -10,7 +9,7 @@ function escapeVCard(value: string) {
 }
 
 export async function GET() {
-  const photo = await readFile(path.join(process.cwd(), "public", "kiana.jpg"));
+  const photo = await buildContactPhoto();
 
   const card = [
     "BEGIN:VCARD",
